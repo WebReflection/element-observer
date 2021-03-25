@@ -1,6 +1,6 @@
 {
   "name": "@webreflection/element-observer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A MutationObserver inspired observer for Custom Elements like mutations on any DOM element",
   "main": "./cjs/index.js",
   "scripts": {
