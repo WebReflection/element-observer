@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>element-observer</title>
+  <script src="../index.js"></script>
+  <script>
+  this.onload = function () {
+    var eo = new ElementObserver({
+      attributeChangedCallback(element, name, oldValue, newValue) {
+        console.log(element, name, oldValue, newValue);
+      },
+      connectedCallback(element) {
+        console.log('connected', element);
+      },
+      disconnectedCallback(element) {
+        console.log('disconnected', element);
+      },
+    });
+    var div = document.createElement('div');
+    div.setAttribute('test', 123);
+    eo.observe(document.body, {attributes: true});
+    eo.observe(div, {
+      attributeFilter: ['test']
+    });
+    document.body.appendChild(div);
+    setTimeout(function () {
+      div.removeAttribute('test');
+      document.body.setAttribute('what', 'ever');
+      setTimeout(function () {
+        console.log('disconnecting div');
+        eo.disconnect(div);
+        div.setAttribute('test', 456);
+        eo.disconnect();
+        document.body.setAttribute('what', 'ever');
+      }, 100);
+    }, 500);
+  };
+  </script>
+</head>
+<body></body>
+</html>
