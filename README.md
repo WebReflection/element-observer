@@ -19,11 +19,11 @@ const observer = new ElementObserver({
   },
 
   // optional, used when the element is disconnected
-  connectedCallback(element) {}
+  disconnectedCallback(element) {}
 });
 
 observer.observe(
-  document.body,
+  observedElement,
   // optional, if present is used to define attributes
   {
     // optional, if omitted will observe all attributes
