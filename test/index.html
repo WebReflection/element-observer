@@ -9,21 +9,23 @@
   this.onload = function () {
     var eo = new ElementObserver({
       attributeChangedCallback(element, name, oldValue, newValue) {
-        console.log(element, name, oldValue, newValue);
+        console.log(element.localName, name, oldValue, newValue);
       },
       connectedCallback(element) {
-        console.log('connected', element);
+        console.log('connected', element.localName);
       },
       disconnectedCallback(element) {
-        console.log('disconnected', element);
+        console.log('disconnected', element.localName);
       },
     });
     var div = document.createElement('div');
     div.setAttribute('test', 123);
     eo.observe(document.body, {attributes: true});
     eo.observe(div, {
-      attributeFilter: ['test']
+      attributeFilter: ['test'],
+      attributeOldValue: true
     });
+    div.setAttribute('nope', 'not observed');
     document.body.appendChild(div);
     setTimeout(function () {
       div.removeAttribute('test');
@@ -39,5 +41,5 @@
   };
   </script>
 </head>
-<body></body>
+<body test="ok"></body>
 </html>

@@ -40,7 +40,7 @@ const loopRecords = (records, mo) => {
 
 export default class ElementObserver {
   /**
-   * 
+   * Create a new ElementObserver based on a specific handler.
    * @param {object} handler the context to use when
    *  `connectedCallback(element)`, `disconnectedCallback(element)`, or
    *  `attributeChangedCallback(element, name, old, value)` are invoked.
