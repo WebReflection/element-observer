@@ -1,6 +1,6 @@
 {
   "name": "@webreflection/element-observer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A MutationObserver inspired observer for Custom Elements like mutations on any DOM element",
   "main": "./cjs/index.js",
   "scripts": {
@@ -12,7 +12,13 @@
     "coveralls": "c8 report --reporter=text-lcov | coveralls",
     "test": "c8 node test/index.js"
   },
-  "keywords": ["custom", "elements", "builtin", "lifecycle", "observer"],
+  "keywords": [
+    "custom",
+    "elements",
+    "builtin",
+    "lifecycle",
+    "observer"
+  ],
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
