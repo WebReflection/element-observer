@@ -25,7 +25,7 @@ self.ElementObserver = (function (exports) {
 
   var ATTRIBUTE_CHANGED_CALLBACK = 'attributeChangedCallback';
   var CONNECTED_CALLBACK = 'connectedCallback';
-  var DISCONNECTED_CALLBACK = 'connectedCallback';
+  var DISCONNECTED_CALLBACK = 'disconnectedCallback';
   var observers = new WeakMap();
   var privates = new WeakMap();
 
