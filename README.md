@@ -32,7 +32,7 @@ observer.observe(
     attributeOldValue: true,
     // optional, if any of the previous properties are defined,
     // this is implicitly set as true
-    filters: true
+    attributes: true
   }
 );
 
