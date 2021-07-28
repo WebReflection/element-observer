@@ -59,8 +59,8 @@ self.ElementObserver = (function (exports) {
     var observed = observers.get(mo);
 
     for (var i = 0, length = records.length; i < length; i++) {
-      loopAndTrigger(observed, records[i].addedNodes, CONNECTED_CALLBACK);
       loopAndTrigger(observed, records[i].removedNodes, DISCONNECTED_CALLBACK);
+      loopAndTrigger(observed, records[i].addedNodes, CONNECTED_CALLBACK);
     }
   };
 

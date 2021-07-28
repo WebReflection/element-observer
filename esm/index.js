@@ -33,8 +33,8 @@ const loopAndTrigger = (observed, nodes, method) => {
 const loopRecords = (records, mo) => {
   const observed = observers.get(mo);
   for (let i = 0, {length} = records; i < length; i++) {
-    loopAndTrigger(observed, records[i].addedNodes, CONNECTED_CALLBACK);
     loopAndTrigger(observed, records[i].removedNodes, DISCONNECTED_CALLBACK);
+    loopAndTrigger(observed, records[i].addedNodes, CONNECTED_CALLBACK);
   }
 };
 
