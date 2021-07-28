@@ -1,6 +1,6 @@
 const ATTRIBUTE_CHANGED_CALLBACK = 'attributeChangedCallback';
 const CONNECTED_CALLBACK = 'connectedCallback';
-const DISCONNECTED_CALLBACK = 'connectedCallback';
+const DISCONNECTED_CALLBACK = 'disconnectedCallback';
 
 const observers = new WeakMap;
 const privates = new WeakMap;

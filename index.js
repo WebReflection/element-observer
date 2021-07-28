@@ -25,7 +25,7 @@ self.ElementObserver = (function (exports) {
 
   var ATTRIBUTE_CHANGED_CALLBACK = 'attributeChangedCallback';
   var CONNECTED_CALLBACK = 'connectedCallback';
-  var DISCONNECTED_CALLBACK = 'connectedCallback';
+  var DISCONNECTED_CALLBACK = 'disconnectedCallback';
   var observers = new WeakMap();
   var privates = new WeakMap();
 
@@ -66,7 +66,7 @@ self.ElementObserver = (function (exports) {
 
   var ElementObserver = /*#__PURE__*/function () {
     /**
-     * 
+     * Create a new ElementObserver based on a specific handler.
      * @param {object} handler the context to use when
      *  `connectedCallback(element)`, `disconnectedCallback(element)`, or
      *  `attributeChangedCallback(element, name, old, value)` are invoked.

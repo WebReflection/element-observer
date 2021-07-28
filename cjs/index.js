@@ -1,7 +1,7 @@
 'use strict';
 const ATTRIBUTE_CHANGED_CALLBACK = 'attributeChangedCallback';
 const CONNECTED_CALLBACK = 'connectedCallback';
-const DISCONNECTED_CALLBACK = 'connectedCallback';
+const DISCONNECTED_CALLBACK = 'disconnectedCallback';
 
 const observers = new WeakMap;
 const privates = new WeakMap;
@@ -41,7 +41,7 @@ const loopRecords = (records, mo) => {
 
 module.exports = class ElementObserver {
   /**
-   * 
+   * Create a new ElementObserver based on a specific handler.
    * @param {object} handler the context to use when
    *  `connectedCallback(element)`, `disconnectedCallback(element)`, or
    *  `attributeChangedCallback(element, name, old, value)` are invoked.
