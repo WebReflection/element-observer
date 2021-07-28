@@ -28,16 +28,21 @@
     div.setAttribute('nope', 'not observed');
     document.body.appendChild(div);
     setTimeout(function () {
-      div.removeAttribute('test');
-      document.body.setAttribute('what', 'ever');
+      document.body.removeChild(div);
+      document.body.appendChild(div);
+      document.body.appendChild(div);
       setTimeout(function () {
-        console.log('disconnecting div');
-        eo.disconnect(div);
-        div.setAttribute('test', 456);
-        eo.disconnect();
+        div.removeAttribute('test');
         document.body.setAttribute('what', 'ever');
-      }, 100);
-    }, 500);
+        setTimeout(function () {
+          console.log('disconnecting div');
+          eo.disconnect(div);
+          div.setAttribute('test', 456);
+          eo.disconnect();
+          document.body.setAttribute('what', 'ever');
+        }, 50);
+      }, 300);
+    }, 25);
   };
   </script>
 </head>
