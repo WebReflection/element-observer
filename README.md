@@ -1,5 +1,11 @@
 # ElementObserver
 
+## Update
+
+Don't miss out [Pretty Cool Elements](https://github.com/WebReflection/p-cool#readme), which is entirely based on *Custom Elements* primitives, and it's even easier to use, and graceful enhance, with any project out there 👍
+
+- - -
+
 A *MutationObserver* inspired observer for *Custom Elements* like mutations on any DOM element.
 
 ```js
